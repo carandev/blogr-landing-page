@@ -1,0 +1,5 @@
+.DS_Store
+.prettierignore
+/design
+README-guide.md
+style-guide.md
