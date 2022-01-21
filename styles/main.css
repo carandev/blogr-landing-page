@@ -1,12 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
 :root {
   --light-red: hsl(356, 100%, 66%);
   --very-light-red: hsl(355, 100%, 74%);
+  --light-red-bg: hsl(353, 100%, 62%);
+  --very-light-red-bg: hsl(13, 100%, 72%);
   --very-dark-blue: hsl(208, 49%, 24%);
   --white: hsl(0, 0%, 100%);
   --grayish-blue: hsl(240, 2%, 79%);
   --very-dark-grayish-blue: hsl(207, 13%, 34%);
   --very-dark-black-blue: hsl(240, 10%, 16%);
+  --font-overpass: 'Overpass', sans-serif;
+  --font-ubuntu: 'Ubuntu', sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+ }
+
+ a {
+   text-decoration: none;
+   color: inherit;
+ }
 
 body {
   margin: 0;
@@ -16,12 +30,11 @@ body {
   padding: 60px 30px 0;
   height: 100vh;
 
-  background: url("../images/bg-pattern-intro-mobile.svg"),
-    linear-gradient(var(--very-light-red), var(--light-red));
-
-  background-position: center;
-  background-size: auto;
+  background-image:url("../images/bg-pattern-intro-mobile.svg"),
+    linear-gradient(var(--very-light-red-bg), var(--light-red-bg));
+  background-position: 35% 30%;
   background-repeat: no-repeat;
+  border-bottom-left-radius: 7rem;
 }
 
 .hamburger-icon {
@@ -50,22 +63,24 @@ body {
   box-sizing: border-box;
   top: 125px;
 
-  padding: 1rem;
+  padding: 2rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 
   width: calc(100% - 64px);
 
   background: var(--white);
+  font-family: var(--font-overpass);
+  font-weight: 600;
+  color: var(--very-dark-black-blue);
   border-radius: 5px;
 }
 
-.header__nav a {
-  padding: 1rem;
-
+.header__links-container a {
   color: var(--very-dark-grayish-blue); 
   text-decoration: none;
 }
@@ -74,6 +89,7 @@ body {
   position: relative;
   padding-right: 1rem;
   width: fit-content;
+  margin: 0;
 
   cursor: pointer;
 }
@@ -91,22 +107,49 @@ body {
   background-position: center;
 }
 
+.flip {
+  color: var(--very-dark-grayish-blue);
+}
+
 .flip::after {
   transform: rotate(180deg);
   top: 20%;
 }
 
-.header__connect-container {
+.header__links-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 
   width: 100%;
-  padding: 1rem 0;
+  padding: 2rem 0;
 
   background: var(--grayish-blue);
   border-radius: 5px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  padding-top: 2rem;
+
+  width: 100%;
+
+  border-top: 1px solid var(--grayish-blue);
+}
+
+.button {
+  padding: .9rem 3rem;
+
+  color: var(--white);
+  background-image: linear-gradient(to left,var(--light-red-bg), var(--very-light-red-bg));
+  border-radius: 2rem;
 }
 
 .hide {
